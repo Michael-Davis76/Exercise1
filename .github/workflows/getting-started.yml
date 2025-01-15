@@ -36,7 +36,7 @@ jobs:
       MY_VAR: 1
     strategy:
       matrix:
-        test-group: [1-10]
+        test-group: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     steps:
       - name: Run a one-line script for Neo
         run: echo "$MY_VAR-" && MY_VAR=MY_VAR+1
