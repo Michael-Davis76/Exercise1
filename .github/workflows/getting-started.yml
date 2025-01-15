@@ -26,15 +26,17 @@ jobs:
 
   stupid_simple:
     runs-on: ubuntu-latest
+    env:
+      Script: "It's not stupid, just simple."
     outputs:
       output_var: ${{ steps.set_output.outputs.output_var }}
     steps:
       - name: Run a one-line script
         id: set_var
-        run: echo "It's not stupid, just simple."
+        run: echo "${{ env.Script }}"
       - name: Set output Variable
         id: set_output
-        run: echo "It's not stupid, just simple." >> $GITHUB_ENV
+        run: echo "output_var=${{ env.Script }}" >> $GITHUB_ENV
 
   matrix_strat:
     needs: stupid_simple
