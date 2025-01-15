@@ -11,6 +11,6 @@ jobs:
     resuable_workflow_job:
         runs-on: ubuntu-latest
         steps:
-          - uses: ../../my_composite@v3
+          - uses: ./my_composite@v3
             with:
               configuration-path: ${{ inputs.config-path }}
