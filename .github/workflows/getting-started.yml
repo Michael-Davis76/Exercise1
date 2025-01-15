@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     
     outputs:
-      output_var: ${{ steps.set_output.outputs.output_var }}
+      output_var: ${{ env.output_var }}
     steps:
       - name: Run a one-line script
         id: set_var
