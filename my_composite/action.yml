@@ -1,0 +1,15 @@
+name: 'My Composite Action'
+description: 'A composite action that takes in and outputs a string'
+inputs:
+  string-to-take:
+    description: 'A string to take in'
+    required: true
+    default: 'Should've put something in bro'
+runs:
+  using: "composite"
+  steps:
+    - name: Set String
+      run: echo $INPUT_STRING_TO_TAKE
+      shell: bash
+      env:
+        INPUT_STRING_TO_TAKE: ${{ inputs.string-to-take }}
