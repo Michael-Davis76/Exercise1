@@ -22,19 +22,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Run a one-line script
-        run: echo ${{ secrets.PASSWORD_SECRET}}
+        run: echo ${{ secrets.PASSWORD_SECRET }}
 
   stupid_simple:
     runs-on: ubuntu-latest
     env:
       Script: "It's not stupid, just simple."
+    outputs:
+      output_var: ${{ steps.set_output.outputs.output_var }}
     steps:
       - name: Run a one-line script
         id: set_var
         run: echo "${{ env.Script }}"
       - name: Set output Variable
         id: set_output
-        run: echo "::set-output name-script_var::${{ env.Script }}"
+        run: echo "${{ env.Script }}" >> $GITHUB_ENV
 
   matrix_strat:
     needs: stupid_simple
@@ -44,6 +46,6 @@ jobs:
         test-group: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     steps:
       - name: Run a one-line script for Neo
-        run: echo "${{ needs.stupid_simple.outputs.Script }}-${{ matrix.test-group }}"
+        run: echo "${{ needs.stupid_simple.outputs.output_var }}-${{ matrix.test-group }}"
         
 
