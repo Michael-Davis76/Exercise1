@@ -34,7 +34,7 @@ jobs:
         run: echo "${{ env.Script }}"
       - name: Set output Variable
         id: set_output
-        run: echo"::set-output name-script_var::${{ env.Script }}"
+        run: echo "::set-output name-script_var::${{ env.Script }}"
 
   matrix_strat:
     needs: stupid_simple
