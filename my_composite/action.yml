@@ -4,7 +4,7 @@ inputs:
   string-to-take:
     description: 'A string to take in'
     required: true
-    default: 'Should've put something in bro'
+    default: 'Should have put something in bro'
 runs:
   using: "composite"
   steps:
