@@ -39,6 +39,6 @@ jobs:
         test-group: [1-10]
     steps:
       - name: Run a one-line script for Neo
-        run: echo MY_VAR && MY_VAR=MY_VAR+1 && echo "-" && echo MY_VAR
+        run: echo "$MY_VAR-"" && MY_VAR=MY_VAR+1
         
 
