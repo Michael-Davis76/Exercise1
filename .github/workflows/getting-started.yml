@@ -35,7 +35,7 @@ jobs:
         run: echo "it's not stupid, just simple"
       - name: Set output Variable
         id: set_output
-        run: echo "output_var='it's not stupid, just simple'" >> $GITHUB_ENV
+        run: echo "output_var='it's not stupid, just simple'" >> "$GITHUB_ENV"
 
   matrix_strat:
     needs: stupid_simple
