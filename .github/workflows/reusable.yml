@@ -13,4 +13,4 @@ jobs:
         steps:
           - uses: Michael-Davis76/Exercise1/my_composite@v3
             with:
-              configuration-path: ${{ inputs.config-path }}
+              string-to-take: ${{ inputs.config-path }}
